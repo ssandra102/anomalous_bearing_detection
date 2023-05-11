@@ -93,6 +93,7 @@ class ModelTrainer:
 
             if best_model_score<0.6:
                 raise CustomException("No best model found")
+            
             logging.info(f"Best found model on both training and testing dataset")
 
             save_object(
@@ -104,10 +105,6 @@ class ModelTrainer:
 
             r2_square = r2_score(y_test, predicted)
             return r2_square
-            
-
-
-
             
         except Exception as e:
             raise CustomException(e,sys)
